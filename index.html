@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>冥想音频合集 - Plyr 互斥版</title>
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <h1>冥想音频合集</h1>
+  
+    <div class="audio-block">
+      <h2>3分钟呼吸空间常规式5</h2>
+      <audio class="js-player" controls>
+        <source src="audio/3分钟呼吸空间常规式5.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>3分钟呼吸空间回应式6</h2>
+      <audio class="js-player" controls>
+        <source src="audio/3分钟呼吸空间回应式6.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>20分钟正念静坐19</h2>
+      <audio class="js-player" controls>
+        <source src="audio/20分钟正念静坐19.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>湖的冥想7</h2>
+      <audio class="js-player" controls>
+        <source src="audio/湖的冥想7.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>静默30</h2>
+      <audio class="js-player" controls>
+        <source src="audio/静默30.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>葡萄干练习9</h2>
+      <audio class="js-player" controls>
+        <source src="audio/葡萄干练习9.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>山的冥想12</h2>
+      <audio class="js-player" controls>
+        <source src="audio/山的冥想12.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>身体扫描38</h2>
+      <audio class="js-player" controls>
+        <source src="audio/身体扫描38.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>十分钟静坐10</h2>
+      <audio class="js-player" controls>
+        <source src="audio/十分钟静坐10.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>探索困难的正念27</h2>
+      <audio class="js-player" controls>
+        <source src="audio/探索困难的正念27.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>正念静坐38</h2>
+      <audio class="js-player" controls>
+        <source src="audio/正念静坐38.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>正念伸展与正念呼吸37</h2>
+      <audio class="js-player" controls>
+        <source src="audio/正念伸展与正念呼吸37.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>正念行走15</h2>
+      <audio class="js-player" controls>
+        <source src="audio/正念行走15.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>正念运动37</h2>
+      <audio class="js-player" controls>
+        <source src="audio/正念运动37.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>CBT腹式呼吸25</h2>
+      <audio class="js-player" controls>
+        <source src="audio/CBT腹式呼吸25.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+    <div class="audio-block">
+      <h2>CBT渐进式肌肉放松30</h2>
+      <audio class="js-player" controls>
+        <source src="audio/CBT渐进式肌肉放松30.mp3" type="audio/mp3" />
+      </audio>
+    </div>
+    
+  <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+  <script>
+    const players = Plyr.setup('.js-player');
+
+    // 播放互斥控制逻辑
+    players.forEach(player => {
+      player.on('play', event => {
+        players.forEach(p => {
+          if (p !== player) {
+            p.pause();
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
